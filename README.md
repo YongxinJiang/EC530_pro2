@@ -28,3 +28,7 @@ The goal is to create the database schema for the project that I  choose which i
 3. Then, I used the new app.py generated the database scheme for image classfication aspect.
  
 4. Then I created a log file for this step.
+
+Step 3:
+1. I build a queue to process inference requests and build a queue to process Training requests
+2. I integrate them into your API which is about DIYML.
