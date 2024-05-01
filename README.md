@@ -18,6 +18,7 @@ What should api do in machine learning, especially in upload data and training:
 
 7.Testing and Evaluation: allow users to test a trained model using a new dataset and retrieve evaluation results. Maybe several times of testing is allowed.
 
+
 Step 2:
 The goal is to create the database schema for the project that I  choose which is about image.But I don’t have to create the database yet, just define what data I am interested in and how they are related and datatypes.
 
@@ -33,3 +34,11 @@ Step 3:
 1. I built a queue to process inference requests and built a queue to process training requests.
 2. I integrated them into your API which is about DIYML.
 3. And I also got the screenshots for docker and the queue unit test.
+
+   
+Step 4:
+It is data protection. This code utilizes parameterized queries to prevent SQL injection attacks. Specifically, when the server receives a REGISTER command and the message length is 4, the code extracts the username, password, and port from the message and executes two SQL queries using parameterized queries: one to check if the username already exists and another to insert a new user.
+
+When checking if the username exists, the code uses a parameterized query with a ? placeholder, ensuring that the user-provided username does not affect the query itself, thus avoiding the risk of SQL injection.
+
+Similarly, when inserting a new user, parameterized queries are used to ensure that user-provided data such as username, password, IP address, and port are not treated as part of the SQL query, thus mitigating the risk of SQL injection.
